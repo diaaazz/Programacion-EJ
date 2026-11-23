@@ -47,11 +47,11 @@ public class Ejercicio31 {
             }
 
             System.out.printf(" |%7d\n", suma);
-            Thread.sleep(125);
+
         }
         System.out.println("--------------------------------------------");
 
-            Thread.sleep(125);
+
 
         for (int i = 0; i < COLUMNAS ; i++) {
             suma = 0;
