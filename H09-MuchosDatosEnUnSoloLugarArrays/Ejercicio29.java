@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio29 {
@@ -8,9 +9,12 @@ public class Ejercicio29 {
         int[][] numeros = new int[FILAS][COLUMNAS];
         Scanner entrada = new Scanner(System.in);
 
-        inicializar(numeros);
-        mostrar(numeros);
-        mostrarPosicion(numeros, entrada);
+        try {
+            inicializar(numeros);
+            mostrar(numeros);
+            mostrarPosicion(numeros, entrada);
+        }catch (InputMismatchException) {
+            System.out.println("**ERROR: TIPO DE DATO INCORRECTO");
     }
 
     public static void inicializar(int[][] vector) {
