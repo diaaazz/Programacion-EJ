@@ -47,20 +47,31 @@ public class Ejercicio20 {
 
     public static boolean esPrimo(int numero) {
         boolean primo = true;
+//
+//        if (numero <= 1) {
+//            primo = false;
+//        }
+//
+//        if (numero % 2 == 0 && numero != 2) {
+//            primo = false;
+//        }
+//
+//        for (int i = 3; i < numero; i+= 2) {
+//            if (numero % i == 0) {
+//                primo = false;
+//            }
+//        }
 
-        if (numero <= 1) {
-            primo = false;
-        }
+        int i = 2;
+        int mitad = numero / 2 + 1;
 
-        if (numero % 2 == 0 && numero != 2) {
-            primo = false;
-        }
-
-        for (int i = 3; i < numero; i+= 2) {
+        while ((i < mitad) && (primo)){
             if (numero % i == 0) {
                 primo = false;
             }
+            i++;
         }
+
 
         return primo;
     }
