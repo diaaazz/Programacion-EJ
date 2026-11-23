@@ -13,8 +13,9 @@ public class Ejercicio29 {
             inicializar(numeros);
             mostrar(numeros);
             mostrarPosicion(numeros, entrada);
-        }catch (InputMismatchException) {
+        }catch (InputMismatchException ime) {
             System.out.println("**ERROR: TIPO DE DATO INCORRECTO");
+        }
     }
 
     public static void inicializar(int[][] vector) {
