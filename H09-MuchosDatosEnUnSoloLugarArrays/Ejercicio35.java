@@ -24,7 +24,7 @@ public class Ejercicio35 {
 
         for (int i = 0; i < FILAS; i++) {
             for (int j = 0; j < COLUMNAS; j++) {
-                vector[i][j] = (int) (Math.random() * 1001);
+                vector[i][j] = (int) (Math.random() * 401 + 500);
             }
         }
 
