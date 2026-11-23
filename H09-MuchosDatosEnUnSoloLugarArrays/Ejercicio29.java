@@ -48,11 +48,10 @@ public class Ejercicio29 {
         int fila = 0;
         int columna = 0;
         int posicion;
-        int posicionCopia;
 
         System.out.printf("Introduzca una posicion (1 - %d): ", FILAS * COLUMNAS);
         posicion = entrada.nextInt();
-        posicionCopia = posicion;
+
 
         fila = (posicion - 1) / COLUMNAS;
         columna = (posicion - 1) % COLUMNAS;
