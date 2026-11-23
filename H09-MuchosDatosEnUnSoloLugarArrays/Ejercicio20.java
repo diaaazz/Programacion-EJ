@@ -24,17 +24,16 @@ public class Ejercicio20 {
     public static void ordenar(int[] vector) {
         int[] nuevo = new int[vector.length];
         int contador = 0;
-        for (int i = 0; i < vector.length; i++) {
-            if (esPrimo(vector[i])){
-                nuevo[contador] = vector[i];
-                contador++;
+
+        for (int numero: vector) {
+            if (esPrimo(numero)) {
+                nuevo[contador++] = numero;
             }
         }
 
-        for (int i = 0; i < vector.length; i++) {
-            if (!esPrimo(vector[i])){
-                nuevo[contador] = vector[i];
-                contador++;
+        for (int numero: vector) {
+            if (!esPrimo(numero)) {
+                nuevo[contador++] = numero;
             }
         }
 
