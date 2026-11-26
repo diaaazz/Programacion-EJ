@@ -63,7 +63,7 @@ public class Ejercicio34 {
     public static void min(int[] vector) {
         int min = vector[0];
 
-        for (int i = 0; i < vector.length ; i++) {
+        for (int i = 1; i < vector.length ; i++) {
                 if (vector[i]< min){
                     min = vector[i];
 
@@ -77,7 +77,7 @@ public class Ejercicio34 {
     public static void max(int[] vector) {
         int max = vector[0];
 
-        for (int i = 0; i < vector.length ; i++) {
+        for (int i = 1; i < vector.length ; i++) {
             if (vector[i] > max){
                 max = vector[i];
 
