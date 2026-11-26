@@ -15,13 +15,15 @@ public class Ejercicio29 {
             mostrarPosicion(numeros, entrada);
         }catch (InputMismatchException ime) {
             System.out.println("**ERROR: TIPO DE DATO INCORRECTO");
+        }catch (IndexOutOfBoundsException ioobe) {
+            System.out.println("**ERROR: VALOR DEMASIADO ALTO / BAJO");
         }
     }
 
     public static void inicializar(int[][] vector) {
         for (int i = 0; i < FILAS ; i++) {
             for (int j = 0; j < COLUMNAS; j++) {
-                vector[i][j] = (int) (Math.random() * 101 + 1);
+                vector[i][j] = (int) (Math.random() * 100 + 1);
             }
         }
 
