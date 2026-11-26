@@ -101,6 +101,25 @@ public class Parcela {
         this.combustible = combustible;
     }
 
+    public String getTipo(){
+
+        String tipo = "";
+
+        switch (this.tipo) {
+            case ARBOL -> tipo = "ARBOL";
+            case MATORRAL -> tipo = "MATORRAL";
+            case AGUA -> tipo = "AGUA";
+            case CORTAFUEGOS -> tipo = "CORTAFUEGOS";
+            case ROCA -> tipo = "ROCA";
+        }
+        return tipo;
+
+    }
+
+    public boolean estaProximamenteArdiendo() {
+        return proximamenteArdiendo;
+    }
+
     @Override
     public String toString() {
         String mostrar;

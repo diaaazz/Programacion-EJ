@@ -84,7 +84,7 @@ public class Bosque {
         for (int i = 0; i < this.mapa.length ; i++) {
             for (int j = 0; j < this.mapa[i].length ; j++) {
 
-                if (this.mapa[i][j].estaArdiendo()) {
+                if (this.mapa[i][j].estaProximamenteArdiendo()) {
                     this.mapa[i][j].aplicarSiguienteEstado();
                 }
 
@@ -117,9 +117,65 @@ public class Bosque {
         }
     }
 
+    public void mostrarMapa() {
+        System.out.print("   ");
+        for (int i = 0; i < this.mapa[0].length; i++) {
+            System.out.printf("%2d", i);
+        }
+
+        System.out.println();
+        System.out.print("  +");
+        for (int i = 0; i < this.mapa[0].length; i++) {
+            System.out.print("--");
+        }
+        System.out.println();
+
+        for (int i = 0; i < this.mapa.length; i++) {
+
+            System.out.printf("%-2d| ", i);
+            for (int j = 0; j < this.mapa[i].length ; j++) {
+                System.out.printf("%-2s", this.mapa[i][j]);
+            }
+            System.out.println();
+
+        }
+    }
+
+    public void mostrarInformeFinal() {
+
+        float porcentaje;
+        int calcinadas = 0;
+        int barreras = 0;
+        int salvadas = 0;
+        int total = this.mapa.length * this.mapa[0].length;
+
+        for (int i = 0; i < this.mapa.length ; i++) {
+            for (int j = 0; j < this.mapa[i].length; j++) {
+
+                if (!this.mapa[i][j].estaIntacta()) {
+                    calcinadas++;
+                }else if ( this.mapa[i][j].esCombustible() ){
+                    salvadas++;
+                }else {
+                    barreras++;
+                }
 
 
 
 
+            }
+        }
 
+        porcentaje = 100f * calcinadas / total;
+
+        System.out.println("\n=== INFORME FINAL DEL ECOSISTEMA ===");
+        //System.out.printf("- Duración total del incendio: %d ciclos \n", );
+        System.out.printf("- Superficie calcinada: %d parcelas (%.1f%%)\n", calcinadas, porcentaje);
+        System.out.printf("- Bosque intacto: %d parcela combustible salvada\n", salvadas);
+        System.out.printf("- Barreras naturales y artificiales (Agua/Cortafuegos/Roca): %d parcelas\n", barreras);
+    }
+
+    public Parcela[][] getMapa() {
+        return mapa;
+    }
 }
